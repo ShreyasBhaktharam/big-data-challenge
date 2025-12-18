@@ -14,8 +14,6 @@ venv.bak/
 
 # Python cache
 __pycache__/
-*.py[cod]
-*$py.class
 
 # OS
 .DS_Store
