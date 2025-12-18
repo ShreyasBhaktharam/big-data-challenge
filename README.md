@@ -82,7 +82,6 @@ Run the scripts in this exact order:
 ```bash
 python3 preprocess.py
 ```
-**Time:** Varies by system (typically faster than pandas-based approaches)
 **Output:** Creates `airbnb.db` database file with:
   - `listings` table: All listing data with state column
   - `reviews` table: All review data with state column
