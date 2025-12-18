@@ -24,12 +24,10 @@ The dataset contains:
 
 ```
 big_data_challenge/
-├── README.md                    # This file
 ├── requirements.txt             # Python dependencies
 ├── install_packages.py          # Package installation script
 ├── preprocess.py                # Optimized data preprocessing (recommended)
 ├── preprocess_fast.py           # Alternative fast preprocessing
-├── analysis.py                  # Original analysis script
 ├── count_rows.py               # Count total rows
 ├── count_unique.py             # Count unique listings/reviews/reviewers
 ├── state_analysis.py           # Find states with most/least listings
