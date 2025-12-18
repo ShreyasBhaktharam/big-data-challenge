@@ -1,0 +1,3 @@
+# Install packages
+# pandas
+# duckdb
