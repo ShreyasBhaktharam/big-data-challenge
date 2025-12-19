@@ -5,11 +5,9 @@ con = duckdb.connect('airbnb.db')
 start_time = time.time()
 
 print(con.execute("""
-    SELECT COUNT(DISTINCT r.id)
-    FROM reviews r
-    JOIN listings l ON r.listing_id = l.id
-    GROUP BY l.host_id
-    ORDER BY 1 DESC
+    SELECT review_count
+    FROM host_review_counts
+    ORDER BY review_count DESC
     LIMIT 1
 """).fetchone()[0])
 

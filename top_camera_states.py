@@ -5,18 +5,11 @@ con = duckdb.connect('airbnb.db')
 start_time = time.time()
 
 result = con.execute("""
-    WITH unique_reviews AS (
-        SELECT DISTINCT state, id, has_camera
-        FROM review_cameras
-    )
-    SELECT 
-        state, 
-        SUM(CASE WHEN has_camera THEN 1 ELSE 0 END) as camera_count
-    FROM unique_reviews
-    GROUP BY state
+    SELECT state, camera_reviews
+    FROM state_camera_agg
     ORDER BY 
-        CAST(SUM(CASE WHEN has_camera THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) DESC,
-        camera_count DESC
+        CAST(camera_reviews AS DOUBLE) / total_reviews DESC,
+        camera_reviews DESC
     LIMIT 1
 """).fetchone()
 
